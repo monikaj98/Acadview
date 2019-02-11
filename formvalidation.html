@@ -1,0 +1,135 @@
+<!Doctype html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Lobster" rel="stylesheet">
+        <style>
+            body{
+                font-weight: bold;
+                font-family: 'Crimson Text', serif;
+                background: url("https://backgroundcheckall.com/wp-content/uploads/2017/12/professional-background-images-for-projects-10.jpg");
+                background-size: cover;
+                background-position: left;
+                margin-top: 60px;
+                padding: 0 100px;
+                font-size: 22px;
+            }
+            form{
+                margin-left: 350px;
+                margin-right: 450px;
+            }
+            fieldset{
+                padding: 0 100px;
+                border-radius: 10px;
+                border:2px solid black;
+                opacity: 0.8;
+                font-size: 24px;
+                margin: 0 auto;
+            }
+            legend{
+                text-align: center;
+                font-size: 45px;
+                color: black;
+                font-family: 'Lobster', cursive;
+            }
+            .button{
+                height:35px;
+                font-size: 23px;
+                font-weight: bold;
+                border-radius:5px;
+                font-family: 'Crimson Text', serif;
+                padding: inherit;
+                background-color: black;
+                color:white;
+                
+            }
+            input{
+                padding: 10px 250px 10px 0;
+                margin: 0 auto;
+                border-radius: 10px;
+                
+            }
+        </style>
+        
+    </head>
+    <body>
+        <form name="myForm" action="#" onsubmit = "return validateForm()" method="post">
+            <fieldset>
+                <legend>Introduction</legend>
+                <br>
+                First Name <input type="text" class="name" placeholder="Enter your first name" name="fname"><br><br>
+                Last Name <input type="text" class="name" placeholder="Enter your last name" name="lname"><br><br>
+                Email-Id <input type="email" class="email" placeholder="Enter the email address" name="email"><br><br>
+                Gender <br><br>
+                &nbsp;&nbsp;&nbsp;Male <input type="radio" name="gender">
+                &nbsp;&nbsp;&nbsp;Female <input type="radio" name="gender"><br><br>
+                Password <input type="password" placeholder="Enter the password" class="pass" name="pass"><br><br>
+                Phone number <input type="text" placeholder="Enter the mobile number" class="phone" name="phone"><br><br>
+                Address <input type="text" placeholder="Enter the address" class="address"><br><br>
+                <input type="submit" class="button">
+                <br><br>
+            </fieldset>
+        </form>
+        <script>
+       function validateForm() {
+                
+                // validating first name
+                var n = document.forms["myForm"]["fname"].value;
+            
+                if(n=="") {
+                    alert("name must be filled out");
+                    return false;
+                }
+           
+                // validating last name
+                var l = document.forms["myForm"]["lname"].value;
+            
+                if(l=="") {
+                    alert("name must be filled out");
+                    return false;
+                }
+           
+                // validating email
+                var e = document.forms["myForm"]["email"].value;
+                var atpos = e.indexOf("@");
+                var dotpos = e.lastIndexOf(".");
+                if(e==""){
+                    alert("email must be filled out");
+                    return false;
+                }
+                else if(atpos<1 || dotpos < atpos+2 || dotpos+2 >=e.length){
+                    alert("please enter a valid email address");
+                    return false;
+                }
+           
+                // validating password
+                var p = document.forms["myForm"]["pass"].value;
+                if(p==""){
+                    alert("password must be filled out");
+                    return false;
+                }                
+                else if(p.length<8){
+                    alert("password length should be greater than 8 characters");
+                    return false;
+                }
+                
+                // validating phone number
+                var x = document.forms["myForm"]["phone"].value;
+                if(x==""){
+                         alert("phone number must be filled out");
+                    return false;
+                }
+                else if(isNaN(x)) {
+                    alert("phone number contains only digits");
+                    return false;
+                
+                }
+                else if(x.length<10){
+                        alert("phone no contains 10 digits ");
+                        return false;
+                }
+                
+                
+            }
+        </script>
+    </body>
+</html>
