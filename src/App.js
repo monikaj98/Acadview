@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Display from './Display';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="main">
+        <h1>Hi,I am React App!</h1>
+        <br/>
+        <div className="cards">
+       <Display Name='Ragnar' Age='23' Birthmonth='June' BirthYear='1992'/>
+        <input type="text"></input>
+        </div>
+        <br/>
+        <div className="cards">
+        <Display Name='Lagartha' Age='22' Birthmonth='May' BirthYear='1991'/>
+        <input type="text"></input>
+        </div>
+        <br/>
+        <div className="cards">
+        <Display Name='Bjorn' Age='26' Birthmonth='September' BirthYear='1996'/>
+        <input type="text"></input>
+        </div>
+        <br/>
+        <div className="cards">
+        <Display Name='Porunn' Age='22' Birthmonth='October' BirthYear='1994'/>
+        <input type="text"></input>
+        </div>
       </div>
     );
   }
